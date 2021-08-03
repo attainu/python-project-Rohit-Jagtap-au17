@@ -57,7 +57,7 @@ def rolly():
     val1= score_font2.render("Your turn", True, (255, 255, 255))
     screen.blit(val1, [25, 457])
 def pickNumber():
-    diceroll = random.randint(5, 6)
+    diceroll = random.randint(1, 6)
     if diceroll == 1:
         dice = pygame.image.load("/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/dice1.png")
     elif diceroll == 2:
@@ -94,7 +94,7 @@ while running:
                 pickNumber()
                 dice,diceroll = pickNumber()
                 screen.blit(dice, (58, 48))
-                print(diceroll, turn)
+                print(diceroll, turn,(yx,yy))
             if pickNumber() and turn=='red':
                 turn='blue'
                 if diceroll == 6 and rx<162 and ry==251:
@@ -1084,513 +1084,509 @@ while running:
                     yx = yx + 62
                     yy = 447
                     turn = 'yellow'
-            if diceroll == 1 and yx < 162 and yy == 251:
-                yx = yx + 62
-                yy = 447
-                turn = 'yellow'
-            elif yx >= 162 and yx < 358 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll != 6:
-                yx = yx + (49 * diceroll)
-                if yx == 309 and yy == 447:
-                    yx = 358
-                    yy = 349
-                elif yx == 456 and yy == 349:
-                    yx = 358
-                    yy = 447
-                elif yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-                elif yx == 603 and yy == 251:
-                    yx = 554
-                    yy = 153
-                elif yx == 407 and yy == 153:
-                    yx = 358
-                    yy = 251
-                elif yx == 554 and yy == 55:
-                    yx = 505
-                    yy = 202
-            elif yx >= 162 and yx < 358 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll == 6:
-                yx = yx + (49 * diceroll)
-                if yx == 309 and yy == 447:
-                    yx = 358
-                    yy = 349
-                elif yx == 456 and yy == 349:
-                    yx = 358
-                    yy = 447
-                elif yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-                elif yx == 603 and yy == 251:
-                    yx = 554
-                    yy = 153
-                elif yx == 407 and yy == 153:
-                    yx = 358
-                    yy = 251
-                elif yx == 554 and yy == 55:
-                    yx = 505
-                    yy = 202
-                turn = 'yellow'
-            elif yx >= 358 and yx < 407 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * diceroll)
-                if yx == 456 and yy == 349:
-                    yx = 358
-                    yy = 447
-                elif yx == 603 and yy == 251:
-                    yx = 554
-                    yy = 153
-                elif yx == 407 and yy == 153:
-                    yx = 358
-                    yy = 251
-                elif yx == 554 and yy == 55 and diceroll == 4:
-                    yx = 505
-                    yy = 202
-            elif yx >= 358 and yx < 407 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 5) - (49 * (diceroll - 6))
-                yy = yy - 49
-                turn = 'yellow'
-            elif yx >= 407 and yx < 456 and diceroll <= 4 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 7
-                yx = yx + (49 * diceroll)
-                if yx == 456 and yy == 349:
-                    yx = 358
-                    yy = 447
-                elif yx == 603 and yy == 251:
-                    yx = 554
-                    yy = 153
-                elif yx == 554 and yy == 55 and diceroll == 3:
-                    yx = 505
-                    yy = 202
-            elif yx >= 407 and yx < 456 and diceroll > 4 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 4) - (49 * (diceroll - 5))
-                yy = yy - 49
-            elif yx >= 407 and yx < 456 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 4) - (49 * (diceroll - 5))
-                yy = yy - 49
-                turn = 'yellow'
-            elif yx >= 456 and yx < 505 and diceroll <= 3 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 8
-                yx = yx + (49 * diceroll)
-                if yx == 603 and yy == 251:
-                    yx = 554
-                    yy = 153
-                elif yx == 554 and yy == 55 and diceroll == 2:
-                    yx = 505
-                    yy = 202
-            elif yx >= 456 and yx < 505 and diceroll > 3 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 3) - (49 * (diceroll - 4))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-            elif yx >= 456 and yx < 505 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 3) - (49 * (diceroll - 4))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                turn = 'yellow'
-            elif yx >= 505 and yx < 554 and diceroll <= 2 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 9
-                yx = yx + (49 * diceroll)
-                if yx == 603 and yy == 251:
-                    yx = 554
-                    yy = 153
-                elif yx == 554 and yy == 55 and diceroll == 1:
-                    yx = 505
-                    yy = 202
-            elif yx >= 505 and yx < 554 and diceroll > 2 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 2) - (49 * (diceroll - 3))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                elif yx == 456 and yy == 202:
-                    yx = 603
-                    yy = 300
-                elif yx == 456 and yy == 104:
-                    yx = 554
-                    yy = 6
-            elif yx >= 505 and yx < 554 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 2) - (49 * (diceroll - 3))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                elif yx == 456 and yy == 202:
-                    yx = 603
-                    yy = 300
-                elif yx == 456 and yy == 104:
-                    yx = 554
-                    yy = 6
-                turn = 'yellow'
-            elif yx >= 554 and yx < 603 and diceroll == 1 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 10
-                yx = yx + (49 * diceroll)
-                if yx == 603 and yy == 251:
-                    yx = 554
-                    yy = 153
-            elif yx >= 554 and yx < 603 and diceroll > 1 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 1) - (49 * (diceroll - 2))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                elif yx == 456 and yy == 202:
-                    yx = 603
-                    yy = 300
-                elif yx == 456 and yy == 104:
-                    yx = 554
-                    yy = 6
-            elif yx >= 554 and yx < 603 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
-                yx = yx + (49 * 1) - (49 * (diceroll - 2))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                elif yx == 456 and yy == 202:
-                    yx = 603
-                    yy = 300
-                elif yx == 456 and yy == 104:
-                    yx = 554
-                    yy = 6
-                turn = 'yellow'
-            elif yx >= 603 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll != 6:
-                yx = yx - (49 * (diceroll - 1))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                elif yx == 456 and yy == 202:
-                    yx = 603
-                    yy = 300
-                elif yx == 456 and yy == 104:
-                    yx = 554
-                    yy = 6
-                elif yx == 358 and yy == 104:
-                    yx = 260
-                    yy = 202
-            elif yx >= 603 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll == 6:
-                yx = yx - (49 * (diceroll - 1))
-                yy = yy - 49
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                elif yx == 456 and yy == 202:
-                    yx = 603
-                    yy = 300
-                elif yx == 456 and yy == 104:
-                    yx = 554
-                    yy = 6
-                elif yx == 358 and yy == 104:
-                    yx = 260
-                    yy = 202
-                turn = 'yellow'
-            # c2 starts from here
-            elif yx > 358 and yx <= 603 and (yy == 398 or yy == 300 or yy == 202 or yy == 104 or yy == 6) and diceroll != 6:
-                yx = yx - (49 * diceroll)
-                if yx == 505 and yy == 398:
-                    yx = 407
-                    yy = 251
-                elif yx == 505 and yy == 300:
-                    yx = 554
-                    yy = 251
-                elif yx == 456 and yy == 202:
-                    yx = 603
-                    yy = 300
-                elif yx == 456 and yy == 104:
-                    yx = 554
-                    yy = 6
-                elif yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-                elif yx == 358 and yy == 104:
-                    yx = 260
-                    yy = 202
-            elif yx > 407 and yx <= 603 and diceroll != 6 and (yy == 398 or yy == 300 or yy == 202 or yy == 104 or yy == 6):
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6:
-                    yx = 162
-                    yy = 251
-                elif yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-                elif yx == 211 and yy == 6:
-                    yx = 162
-                    yy = 251
-            elif yx > 407 and yx <= 603 and diceroll == 6 and (yy == 398 or yy == 300 or yy == 202 or yy == 104 or yy == 6):
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6:
-                    yx = 162
-                    yy = 251
-                elif yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-                elif yx == 211 and yy == 6:
-                    yx = 162
-                    yy = 251
-                turn = 'yellow'
-            elif yx == 407 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll != 6:
-                yx = yx - (49 * diceroll)
-                if yx == 358 and yy == 104:
-                    yx = 260
-                    yy = 202
-                elif yx == 211 and yy == 6:
-                    yx = 162
-                    yy = 251
-            elif yx == 407 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
-                yx = yx - (49 * 5)
-                yy = yy - 49
-                if yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-                turn = 'yellow'
-            elif yx == 358 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 5:
-                yx = yx - (49 * diceroll)
-                if yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-            elif yx == 358 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 5:
-                yx = yx - (49 * 4) + (49 * (diceroll - 5))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-            elif yx == 358 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
-                yx = yx - (49 * 4) + (49 * (diceroll - 5))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                turn = 'yellow'
-            elif yx == 309 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 4:
-                yx = yx - (49 * diceroll)
-                if yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-            elif yx == 309 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll >= 4 and diceroll != 6:
-                yx = yx - (49 * 3) + (49 * (diceroll - 4))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-            elif yx == 309 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
-                yx = yx - (49 * 3) + (49 * (diceroll - 4))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-                turn = 'yellow'
-            elif yx == 260 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 3:
-                yx = yx - (49 * diceroll)
-                if yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-            elif yx == 260 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll >= 3 and diceroll != 6:
-                yx = yx - (49 * 2) + (49 * (diceroll - 3))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-            elif yx == 260 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
-                yx = yx - (49 * 2) + (49 * (diceroll - 3))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-                turn = 'yellow'
-            elif yx == 211 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 2:
-                yx = yx - (49 * diceroll)
-                if yx == 162 and yy == 300:
-                    yx = 260
-                    yy = 447
-            elif yx == 211 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll != 6 and diceroll >= 2:
-                yx = yx - 49 + (49 * (diceroll - 2))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-            elif yx == 211 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
-                yx = yx - 49 + (49 * (diceroll - 2))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-                turn = 'yellow'
-            elif yx == 162 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll != 6:
-                yx = yx + (49 * (diceroll - 1))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-                elif yx == 407 and yy == 153:
-                    yx = 358
-                    yy = 251
-            elif yx == 162 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
-                yx = yx + (49 * (diceroll - 1))
-                yy = yy - 49
-                if yx == 211 and yy == 251:
-                    yx = 260
-                    yy = 153
-                elif yx == 211 and yy == 153:
-                    yx = 162
-                    yy = 55
-                elif yx == 260 and yy == 251:
-                    yx = 260
-                    yy = 398
-                elif yx == 407 and yy == 153:
-                    yx = 358
-                    yy = 251
-                turn = 'yellow'
-            # final row
-            elif yy == 6 and (yx == 554 or yx == 603) and diceroll != 6:
-                yx = yx - (49 * diceroll)
-            elif yy == 6 and (yx == 554 or yx == 603) and diceroll == 6:
-                yx = yx - (49 * diceroll)
-                turn = 'yellow'
-            elif yy == 6 and yx == 456 and diceroll < 5:
-                yx = yx - (49 * diceroll)
-            elif yy == 6 and yx == 456 and diceroll == 5:
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6 and diceroll == 5:
-                    yx = 162
-                    yy = 251
-            elif yy == 6 and yx == 456 and diceroll == 6:
-                yx = yx
-            elif yy == 6 and yx == 505 and diceroll != 6:
-                yx = yx - (49 * diceroll)
-            elif yy == 6 and yx == 505 and diceroll == 6:
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6 and diceroll == 6:
-                    yx = 162
-                    yy = 251
-            elif yy == 6 and yx == 407 and diceroll < 6:
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6 and diceroll == 4:
-                    yx = 162
-                    yy = 251
-            elif yy == 6 and yx == 407 and yx >= 162 and diceroll == 6:
-                yx = yx
-            elif yy == 6 and yx == 358 and yx >= 162 and diceroll >= 5:
-                yx = yx
-            elif yy == 6 and yx == 358 and yx >= 162 and diceroll < 5:
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6 and diceroll == 3:
-                    yx = 162
-                    yy = 251
-            elif yy == 6 and yx == 309 and yx >= 162 and diceroll >= 4:
-                yx = yx
-            elif yy == 6 and yx == 309 and yx >= 162 and diceroll < 4:
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6 and diceroll == 2:
-                    yx = 162
-                    yy = 251
-            elif yy == 6 and yx == 260 and yx >= 162 and diceroll >= 3:
-                yx = yx
-            elif yy == 6 and yx == 260 and yx >= 162 and diceroll < 3:
-                yx = yx - (49 * diceroll)
-                if yx == 211 and yy == 6 and diceroll == 1:
-                    yx = 162
-                    yy = 251
-            elif yy == 6 and yx == 211 and yx > 162 and diceroll >= 2:
-                yx = yx
+                elif yx >= 162 and yx < 358 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll != 6:
+                    yx = yx + (49 * diceroll)
+                    if yx == 309 and yy == 447:
+                        yx = 358
+                        yy = 349
+                    elif yx == 456 and yy == 349:
+                        yx = 358
+                        yy = 447
+                    elif yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                    elif yx == 603 and yy == 251:
+                        yx = 554
+                        yy = 153
+                    elif yx == 407 and yy == 153:
+                        yx = 358
+                        yy = 251
+                    elif yx == 554 and yy == 55:
+                        yx = 505
+                        yy = 202
+                elif yx >= 162 and yx < 358 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll == 6:
+                    yx = yx + (49 * diceroll)
+                    if yx == 309 and yy == 447:
+                        yx = 358
+                        yy = 349
+                    elif yx == 456 and yy == 349:
+                        yx = 358
+                        yy = 447
+                    elif yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                    elif yx == 603 and yy == 251:
+                        yx = 554
+                        yy = 153
+                    elif yx == 407 and yy == 153:
+                        yx = 358
+                        yy = 251
+                    elif yx == 554 and yy == 55:
+                        yx = 505
+                        yy = 202
+                    turn = 'yellow'
+                elif yx >= 358 and yx < 407 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * diceroll)
+                    if yx == 456 and yy == 349:
+                        yx = 358
+                        yy = 447
+                    elif yx == 603 and yy == 251:
+                        yx = 554
+                        yy = 153
+                    elif yx == 407 and yy == 153:
+                        yx = 358
+                        yy = 251
+                    elif yx == 554 and yy == 55 and diceroll == 4:
+                        yx = 505
+                        yy = 202
+                elif yx >= 358 and yx < 407 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 5) - (49 * (diceroll - 6))
+                    yy = yy - 49
+                    turn = 'yellow'
+                elif yx >= 407 and yx < 456 and diceroll <= 4 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 7
+                    yx = yx + (49 * diceroll)
+                    if yx == 456 and yy == 349:
+                        yx = 358
+                        yy = 447
+                    elif yx == 603 and yy == 251:
+                        yx = 554
+                        yy = 153
+                    elif yx == 554 and yy == 55 and diceroll == 3:
+                        yx = 505
+                        yy = 202
+                elif yx >= 407 and yx < 456 and diceroll > 4 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 4) - (49 * (diceroll - 5))
+                    yy = yy - 49
+                elif yx >= 407 and yx < 456 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 4) - (49 * (diceroll - 5))
+                    yy = yy - 49
+                    turn = 'yellow'
+                elif yx >= 456 and yx < 505 and diceroll <= 3 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 8
+                    yx = yx + (49 * diceroll)
+                    if yx == 603 and yy == 251:
+                        yx = 554
+                        yy = 153
+                    elif yx == 554 and yy == 55 and diceroll == 2:
+                        yx = 505
+                        yy = 202
+                elif yx >= 456 and yx < 505 and diceroll > 3 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 3) - (49 * (diceroll - 4))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                elif yx >= 456 and yx < 505 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 3) - (49 * (diceroll - 4))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    turn = 'yellow'
+                elif yx >= 505 and yx < 554 and diceroll <= 2 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 9
+                    yx = yx + (49 * diceroll)
+                    if yx == 603 and yy == 251:
+                        yx = 554
+                        yy = 153
+                    elif yx == 554 and yy == 55 and diceroll == 1:
+                        yx = 505
+                        yy = 202
+                elif yx >= 505 and yx < 554 and diceroll > 2 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 2) - (49 * (diceroll - 3))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    elif yx == 456 and yy == 202:
+                        yx = 603
+                        yy = 300
+                    elif yx == 456 and yy == 104:
+                        yx = 554
+                        yy = 6
+                elif yx >= 505 and yx < 554 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 2) - (49 * (diceroll - 3))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    elif yx == 456 and yy == 202:
+                        yx = 603
+                        yy = 300
+                    elif yx == 456 and yy == 104:
+                        yx = 554
+                        yy = 6
+                    turn = 'yellow'
+                elif yx >= 554 and yx < 603 and diceroll == 1 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):  # 10
+                    yx = yx + (49 * diceroll)
+                    if yx == 603 and yy == 251:
+                        yx = 554
+                        yy = 153
+                elif yx >= 554 and yx < 603 and diceroll > 1 and diceroll != 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 1) - (49 * (diceroll - 2))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    elif yx == 456 and yy == 202:
+                        yx = 603
+                        yy = 300
+                    elif yx == 456 and yy == 104:
+                        yx = 554
+                        yy = 6
+                elif yx >= 554 and yx < 603 and diceroll == 6 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55):
+                    yx = yx + (49 * 1) - (49 * (diceroll - 2))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    elif yx == 456 and yy == 202:
+                        yx = 603
+                        yy = 300
+                    elif yx == 456 and yy == 104:
+                        yx = 554
+                        yy = 6
+                    turn = 'yellow'
+                elif yx >= 603 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll != 6:
+                    yx = yx - (49 * (diceroll - 1))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    elif yx == 456 and yy == 202:
+                        yx = 603
+                        yy = 300
+                    elif yx == 456 and yy == 104:
+                        yx = 554
+                        yy = 6
+                    elif yx == 358 and yy == 104:
+                        yx = 260
+                        yy = 202
+                elif yx >= 603 and (yy == 447 or yy == 349 or yy == 251 or yy == 153 or yy == 55) and diceroll == 6:
+                    yx = yx - (49 * (diceroll - 1))
+                    yy = yy - 49
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    elif yx == 456 and yy == 202:
+                        yx = 603
+                        yy = 300
+                    elif yx == 456 and yy == 104:
+                        yx = 554
+                        yy = 6
+                    elif yx == 358 and yy == 104:
+                        yx = 260
+                        yy = 202
+                    turn = 'yellow'
+                # c2 starts from here
+                elif yx > 358 and yx <= 603 and (yy == 398 or yy == 300 or yy == 202 or yy == 104 or yy == 6) and diceroll != 6:
+                    yx = yx - (49 * diceroll)
+                    if yx == 505 and yy == 398:
+                        yx = 407
+                        yy = 251
+                    elif yx == 505 and yy == 300:
+                        yx = 554
+                        yy = 251
+                    elif yx == 456 and yy == 202:
+                        yx = 603
+                        yy = 300
+                    elif yx == 456 and yy == 104:
+                        yx = 554
+                        yy = 6
+                    elif yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                    elif yx == 358 and yy == 104:
+                        yx = 260
+                        yy = 202
+                elif yx > 407 and yx <= 603 and diceroll != 6 and (yy == 398 or yy == 300 or yy == 202 or yy == 104 or yy == 6):
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6:
+                        yx = 162
+                        yy = 251
+                    elif yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                    elif yx == 211 and yy == 6:
+                        yx = 162
+                        yy = 251
+                elif yx > 407 and yx <= 603 and diceroll == 6 and (yy == 398 or yy == 300 or yy == 202 or yy == 104 or yy == 6):
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6:
+                        yx = 162
+                        yy = 251
+                    elif yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                    elif yx == 211 and yy == 6:
+                        yx = 162
+                        yy = 251
+                    turn = 'yellow'
+                elif yx == 407 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll != 6:
+                    yx = yx - (49 * diceroll)
+                    if yx == 358 and yy == 104:
+                        yx = 260
+                        yy = 202
+                    elif yx == 211 and yy == 6:
+                        yx = 162
+                        yy = 251
+                elif yx == 407 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
+                    yx = yx - (49 * 5)
+                    yy = yy - 49
+                    if yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                    turn = 'yellow'
+                elif yx == 358 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 5:
+                    yx = yx - (49 * diceroll)
+                    if yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                elif yx == 358 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 5:
+                    yx = yx - (49 * 4) + (49 * (diceroll - 5))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                elif yx == 358 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
+                    yx = yx - (49 * 4) + (49 * (diceroll - 5))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    turn = 'yellow'
+                elif yx == 309 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 4:
+                    yx = yx - (49 * diceroll)
+                    if yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                elif yx == 309 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll >= 4 and diceroll != 6:
+                    yx = yx - (49 * 3) + (49 * (diceroll - 4))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                elif yx == 309 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
+                    yx = yx - (49 * 3) + (49 * (diceroll - 4))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                    turn = 'yellow'
+                elif yx == 260 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 3:
+                    yx = yx - (49 * diceroll)
+                    if yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                elif yx == 260 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll >= 3 and diceroll != 6:
+                    yx = yx - (49 * 2) + (49 * (diceroll - 3))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                elif yx == 260 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
+                    yx = yx - (49 * 2) + (49 * (diceroll - 3))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                    turn = 'yellow'
+                elif yx == 211 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll < 2:
+                    yx = yx - (49 * diceroll)
+                    if yx == 162 and yy == 300:
+                        yx = 260
+                        yy = 447
+                elif yx == 211 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll != 6 and diceroll >= 2:
+                    yx = yx - 49 + (49 * (diceroll - 2))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                elif yx == 211 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
+                    yx = yx - 49 + (49 * (diceroll - 2))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                    turn = 'yellow'
+                elif yx == 162 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll != 6:
+                    yx = yx + (49 * (diceroll - 1))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                    elif yx == 407 and yy == 153:
+                        yx = 358
+                        yy = 251
+                elif yx == 162 and (yy == 398 or yy == 300 or yy == 202 or yy == 104) and diceroll == 6:
+                    yx = yx + (49 * (diceroll - 1))
+                    yy = yy - 49
+                    if yx == 211 and yy == 251:
+                        yx = 260
+                        yy = 153
+                    elif yx == 211 and yy == 153:
+                        yx = 162
+                        yy = 55
+                    elif yx == 260 and yy == 251:
+                        yx = 260
+                        yy = 398
+                    elif yx == 407 and yy == 153:
+                        yx = 358
+                        yy = 251
+                    turn = 'yellow'
+                # final row
+                elif yy == 6 and (yx == 554 or yx == 603) and diceroll != 6:
+                    yx = yx - (49 * diceroll)
+                elif yy == 6 and (yx == 554 or yx == 603) and diceroll == 6:
+                    yx = yx - (49 * diceroll)
+                    turn = 'yellow'
+                elif yy == 6 and yx == 456 and diceroll < 5:
+                    yx = yx - (49 * diceroll)
+                elif yy == 6 and yx == 456 and diceroll == 5:
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6 and diceroll == 5:
+                        yx = 162
+                        yy = 251
+                elif yy == 6 and yx == 456 and diceroll == 6:
+                    yx = yx
+                elif yy == 6 and yx == 505 and diceroll != 6:
+                    yx = yx - (49 * diceroll)
+                elif yy == 6 and yx == 505 and diceroll == 6:
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6 and diceroll == 6:
+                        yx = 162
+                        yy = 251
+                elif yy == 6 and yx == 407 and diceroll < 6:
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6 and diceroll == 4:
+                        yx = 162
+                        yy = 251
+                elif yy == 6 and yx == 407 and yx >= 162 and diceroll == 6:
+                    yx = yx
+                elif yy == 6 and yx == 358 and yx >= 162 and diceroll >= 5:
+                    yx = yx
+                elif yy == 6 and yx == 358 and yx >= 162 and diceroll < 5:
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6 and diceroll == 3:
+                        yx = 162
+                        yy = 251
+                elif yy == 6 and yx == 309 and yx >= 162 and diceroll >= 4:
+                    yx = yx
+                elif yy == 6 and yx == 309 and yx >= 162 and diceroll < 4:
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6 and diceroll == 2:
+                        yx = 162
+                        yy = 251
+                elif yy == 6 and yx == 260 and yx >= 162 and diceroll >= 3:
+                    yx = yx
+                elif yy == 6 and yx == 260 and yx >= 162 and diceroll < 3:
+                    yx = yx - (49 * diceroll)
+                    if yx == 211 and yy == 6 and diceroll == 1:
+                        yx = 162
+                        yy = 251
+                elif yy == 6 and yx == 211 and yx > 162 and diceroll >= 2:
+                    yx = yx
     rplayer(rx, ry)
     bplayer(b1x, b1y)
     yplayer(yx,yy)
     pygame.display.update()
     if rx==162 and ry==6 :
         screen.fill((50, 153, 213))
-        value = score_font.render("Red won", True, (255, 255, 102))
+        value = score_font.render("Red won", True, (255, 0, 0))
         screen.blit(value, [250, 200])
         print("RED WON")
         running = False
     if b1x==162 and b1y==9 :
         screen.fill((50, 153, 213))
-        value = score_font.render("Blue won", True, (255, 255, 102))
+        value = score_font.render("Blue won", True, (0, 0, 255))
         screen.blit(value, [250, 200])
         print("BLUE WON")
         running = False
-    if yx==162 and yy==9 :
+    if yx==162 and yy==6 :
         screen.fill((50, 153, 213))
-        value = score_font.render("Yellow won", True, (255, 255, 102))
+        value = score_font.render("Yellow won", True, (255, 255, 0))
         screen.blit(value, [250, 200])
         print("YELLOW WON")
         running = False
