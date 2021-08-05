@@ -11,7 +11,7 @@ A Snakes and Ladders Game made with Python 3.7 using module pygame.
  ##2 Install Pygame
     pip install pygame
  ## 3 Run Python File
-    python "Snakes-Ladders-Final.py"
+    python "main.py"
 ## Rules for Playing Game
 1) pawn only move forward after dice getting 6 and it will move numbers shown in the dice.
 2) Take it in turns to roll the dice. Move your pawn forward the number of spaces shown on the dice.
