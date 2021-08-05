@@ -1573,19 +1573,19 @@ while running:
     yplayer(yx,yy)
     pygame.display.update()
     if rx==162 and ry==6 :
-        screen.fill((50, 153, 213))
-        value = score_font.render("Red won", True, (255, 0, 0))
+        screen.fill((255, 0, 0))
+        value = score_font.render("Red won", True, (0, 0, 0))
         screen.blit(value, [250, 200])
         print("RED WON")
         running = False
     if b1x==162 and b1y==9 :
-        screen.fill((50, 153, 213))
+        screen.fill((0, 0, 255)))
         value = score_font.render("Blue won", True, (0, 0, 255))
         screen.blit(value, [250, 200])
         print("BLUE WON")
         running = False
     if yx==162 and yy==6 :
-        screen.fill((50, 153, 213))
+        screen.fill((255, 255, 0))
         value = score_font.render("Yellow won", True, (255, 255, 0))
         screen.blit(value, [250, 200])
         print("YELLOW WON")
