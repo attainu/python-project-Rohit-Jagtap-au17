@@ -7,14 +7,14 @@ screen = pygame.display.set_mode((650, 500))
 white = (255, 255, 255)
 pygame.display.set_caption("Snakes And Ladders")
 # bckground image
-bckimg = pygame.image.load('/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/board.jpg')
+bckimg = pygame.image.load('./images/board.jpg')
 # img = pygame.image.load('dice (6).png')
-arrow = pygame.image.load('/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/red1.png')
-stg = pygame.image.load('/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/starts.jpg')
+arrow = pygame.image.load('./images/red1.png')
+stg = pygame.image.load('./images/starts.jpg')
 # players
-r1 = pygame.image.load('/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/redtoken.png')
-b1 = pygame.image.load('/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/bluetoken.png')
-y1 = pygame.image.load('/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/yellowtoken.png')
+r1 = pygame.image.load('./images/redtoken.png')
+b1 = pygame.image.load('./images/bluetoken.png')
+y1 = pygame.image.load('./images/yellowtoken.png')
 rx = 100
 ry = 251
 
@@ -59,17 +59,17 @@ def rolly():
 def pickNumber():
     diceroll = random.randint(1, 6)
     if diceroll == 1:
-        dice = pygame.image.load("/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/dice1.png")
+        dice = pygame.image.load("./images/dice1.png")
     elif diceroll == 2:
-        dice = pygame.image.load("/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/dice2.png")
+        dice = pygame.image.load("./images/dice2.png")
     elif diceroll == 3:
-        dice = pygame.image.load("/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/dice3.png")
+        dice = pygame.image.load("./images/dice3.png")
     elif diceroll == 4:
-        dice = pygame.image.load("/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/dice4.png")
+        dice = pygame.image.load("./images/dice4.png")
     elif diceroll == 5:
-        dice = pygame.image.load("/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/dice5.png")
+        dice = pygame.image.load("./images/dice5.png")
     elif diceroll == 6:
-        dice = pygame.image.load("/home/rohit/Desktop/python-project-Rohit-Jagtap-au17/images/dice6.png")
+        dice = pygame.image.load("./images/dice6.png")
     return (dice,diceroll)
 # game loop
 running = True
@@ -94,7 +94,7 @@ while running:
                 pickNumber()
                 dice,diceroll = pickNumber()
                 screen.blit(dice, (58, 48))
-                print(diceroll, turn,(yx,yy))
+                print(turn," GOT ", diceroll)
             if pickNumber() and turn=='red':
                 turn='blue'
                 if diceroll == 6 and rx<162 and ry==251:
@@ -1579,7 +1579,7 @@ while running:
         print("RED WON")
         running = False
     if b1x==162 and b1y==9 :
-        screen.fill((0, 0, 255)))
+        screen.fill((0, 0, 255))
         value = score_font.render("Blue won", True, (0, 0, 255))
         screen.blit(value, [250, 200])
         print("BLUE WON")
